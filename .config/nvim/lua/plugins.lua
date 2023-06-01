@@ -7,19 +7,19 @@ require('packer').startup(function(use)
     config = function()
       require('nvim-tree').setup {
         view = {
-	  width = 40,
-	},
-	renderer = {
-	  group_empty = true,
-	},
+          width = 40,
+	      },
+	      renderer = {
+          group_empty = true,
+        },
       }
-    end
+    end,
   }
 
   use {
     'rebelot/kanagawa.nvim',
     config = function()
       vim.cmd('colorscheme kanagawa')
-    end
+    end,
   }
 end)
