@@ -17,6 +17,13 @@ require('packer').startup(function(use)
   }
 
   use {
+    "Pocco81/auto-save.nvim",
+    config = function()
+       require("auto-save").setup {}
+    end
+  }
+
+  use {
     'rebelot/kanagawa.nvim',
     config = function()
       vim.cmd('colorscheme kanagawa')
