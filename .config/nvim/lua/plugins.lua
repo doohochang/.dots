@@ -23,10 +23,27 @@ require('packer').startup(function(use)
     end
   }
 
+  use 'jiangmiao/auto-pairs'
+
   use {
     'rebelot/kanagawa.nvim',
     config = function()
       vim.cmd('colorscheme kanagawa')
+    end,
+  }
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true,
+    },
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'kanagawa'
+        }
+      }
     end,
   }
 
