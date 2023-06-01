@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,linux,vim,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux,vim,windows
 
+### Specific files
+.config/nvim/plugin/packer_compiled.lua
+
 ### Linux ###
 *~
 
