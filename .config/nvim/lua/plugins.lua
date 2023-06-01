@@ -33,4 +33,6 @@ require('packer').startup(function(use)
       require('telescope').load_extension('fzy_native')
     end,
   }
+
+  use 'jremmen/vim-ripgrep'
 end)
