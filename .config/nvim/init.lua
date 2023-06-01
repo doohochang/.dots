@@ -7,6 +7,8 @@ vim.g.mapleader = ","
 vim.g.localleader = "\\"
 
 -- Vim options
+vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
+
 local opt = vim.opt
 
 local indent = 2
@@ -17,3 +19,8 @@ opt.tabstop = indent
 
 require('plugins')
 require('keys')
+
+-- Folding
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.cmd('set nofoldenable')
