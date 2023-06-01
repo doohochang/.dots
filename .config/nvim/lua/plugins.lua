@@ -22,4 +22,15 @@ require('packer').startup(function(use)
       vim.cmd('colorscheme kanagawa')
     end,
   }
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      "nvim-telescope/telescope-fzy-native.nvim",
+    },
+    config = function()
+      require('telescope').load_extension('fzy_native')
+    end,
+  }
 end)
