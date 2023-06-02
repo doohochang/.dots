@@ -19,13 +19,18 @@ require('packer').startup(function(use)
   }
 
   use {
-    "Pocco81/auto-save.nvim",
+    'Pocco81/auto-save.nvim',
     config = function()
-       require("auto-save").setup {}
+       require('auto-save').setup {}
     end
   }
 
-  use 'jiangmiao/auto-pairs'
+  use {
+    "windwp/nvim-autopairs",
+     config = function()
+       require('nvim-autopairs').setup {}
+     end
+  }
 
   use {
     'rebelot/kanagawa.nvim',
@@ -53,7 +58,7 @@ require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
-      "nvim-telescope/telescope-fzy-native.nvim",
+      'nvim-telescope/telescope-fzy-native.nvim',
     },
     config = function()
       require('telescope').load_extension('fzy_native')
@@ -70,7 +75,7 @@ require('packer').startup(function(use)
     end,
     config = function()
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { "lua", "vim", "scala", "kotlin" },
+        ensure_installed = { 'lua', 'vim', 'scala', 'kotlin' },
         highlight = {
           enable = true,
         },
@@ -82,12 +87,12 @@ require('packer').startup(function(use)
   }
 
   use {
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+    'iamcco/markdown-preview.nvim',
+    run = function() vim.fn['mkdp#util#install']() end,
   }
 
   use {
-    "hrsh7th/nvim-cmp",
+    'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
@@ -97,30 +102,30 @@ require('packer').startup(function(use)
       'hrsh7th/cmp-nvim-lsp-signature-help',
     },
     config = function()
-      local cmp = require("cmp")
+      local cmp = require('cmp')
       cmp.setup {
         sources = {
-          { name = "nvim_lsp", priority = 10 },
-          { name = "buffer" },
-          { name = "vsnip" },
-          { name = "path" },
-          { name = "nvim_lsp_signature_help" },
+          { name = 'nvim_lsp', priority = 10 },
+          { name = 'buffer' },
+          { name = 'vsnip' },
+          { name = 'path' },
+          { name = 'nvim_lsp_signature_help' },
         },
         snippet = {
           expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body)
+            vim.fn['vsnip#anonymous'](args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert {
-          ["<CR>"] = cmp.mapping.confirm { select = true },
-          ["<Tab>"] = function(fallback)
+          ['<CR>'] = cmp.mapping.confirm { select = true },
+          ['<Tab>'] = function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             else
               fallback()
             end
           end,
-          ["<S-Tab>"] = function(fallback)
+          ['<S-Tab>'] = function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             else
@@ -133,52 +138,52 @@ require('packer').startup(function(use)
   }
 
   use {
-    "scalameta/nvim-metals",
+    'scalameta/nvim-metals',
     requires = {
-      "nvim-lua/plenary.nvim",
-      "mfussenegger/nvim-dap",
+      'nvim-lua/plenary.nvim',
+      'mfussenegger/nvim-dap',
     },
     config = function()
-      local metals_config = require("metals").bare_config()
+      local metals_config = require('metals').bare_config()
 
       metals_config.settings = {
         showImplicitArguments = true,
       }
 
-      metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+      metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      local dap = require("dap")
+      local dap = require('dap')
 
       dap.configurations.scala = {
         {
-          type = "scala",
-          request = "launch",
-          name = "RunOrTest",
+          type = 'scala',
+          request = 'launch',
+          name = 'RunOrTest',
           metals = {
-            runType = "runOrTestFile",
+            runType = 'runOrTestFile',
           },
         },
         {
-          type = "scala",
-          request = "launch",
-          name = "Test Target",
+          type = 'scala',
+          request = 'launch',
+          name = 'Test Target',
           metals = {
-            runType = "testTarget",
+            runType = 'testTarget',
           },
         },
       }
 
       metals_config.on_attach = function(client, bufnr)
-        require("metals").setup_dap()
+        require('metals').setup_dap()
       end
 
-      local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+      local nvim_metals_group = vim.api.nvim_create_augroup('nvim-metals', { clear = true })
       vim.api.nvim_create_autocmd(
-        "FileType",
+        'FileType',
         {
-          pattern = { "scala", "sbt", "java" },
+          pattern = { 'scala', 'sbt', 'java' },
           callback = function()
-            require("metals").initialize_or_attach(metals_config)
+            require('metals').initialize_or_attach(metals_config)
           end,
           group = nvim_metals_group,
         }
