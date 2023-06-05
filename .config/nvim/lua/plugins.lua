@@ -18,6 +18,7 @@ return {
   },
   {
     'Pocco81/auto-save.nvim',
+    event = 'InsertEnter',
     config = function()
        require('auto-save').setup {}
     end
@@ -29,12 +30,14 @@ return {
   },
   {
     'lukas-reineke/indent-blankline.nvim',
+    event = 'BufRead',
     config = function()
       require("indent_blankline").setup {}
     end
   },
   {
     'numToStr/Comment.nvim',
+    event = 'BufRead',
     config = function()
       require('Comment').setup {}
     end,
