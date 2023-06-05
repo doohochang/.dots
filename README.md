@@ -1,6 +1,6 @@
 # Dots
 
-Dotfiles configuration for UNIX-like systems.
+My dotfiles configuration for UNIX-like systems.
 
 ```
 # Neovim

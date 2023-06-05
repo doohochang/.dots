@@ -8,6 +8,10 @@ return {
   },
   { 'mhinz/vim-startify' },
   {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime",
+  },
+  {
     'kyazdani42/nvim-tree.lua',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = function()
@@ -29,9 +33,10 @@ return {
   },
   {
     'windwp/nvim-autopairs',
-     config = function()
-       require('nvim-autopairs').setup {}
-     end
+    event = 'InsertEnter',
+    config = function()
+      require('nvim-autopairs').setup {}
+    end
   },
   {
     'lukas-reineke/indent-blankline.nvim',
@@ -60,13 +65,13 @@ return {
       require('telescope').load_extension('fzy_native')
     end,
   },
-  { 'jremmen/vim-ripgrep' },
+  {
+    'jremmen/vim-ripgrep',
+    cmd = "Rg",
+  },
   {
     'nvim-treesitter/nvim-treesitter',
-    build = function()
-      local ts_update = require('nvim-treesitter.install').update { with_sync = true }
-      ts_update()
-    end,
+    build = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup {
         ensure_installed = 'all',
@@ -82,10 +87,12 @@ return {
   },
   {
     'iamcco/markdown-preview.nvim',
+    ft = 'markdown',
     build = function() vim.fn['mkdp#util#install']() end,
   },
   {
     'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
     dependencies = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
