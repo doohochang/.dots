@@ -25,9 +25,7 @@ return {
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
-    config = function()
-      require('nvim-autopairs').setup {}
-    end
+    config = require('setting.autopairs').setup,
   },
   {
     'lukas-reineke/indent-blankline.nvim',
