@@ -2,9 +2,11 @@ return {
   setup = function()
     local metals_config = require('metals').bare_config()
 
+    metals_config.init_options.statusBarProvider = "on"
+
     metals_config.settings = {
       showImplicitArguments = true,
-      serverVersion = "latest.snapshot",
+      serverVersion = 'latest.snapshot',
     }
 
     metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -28,6 +30,11 @@ return {
           runType = 'testTarget',
         },
       },
+    }
+
+    -- For selecting test suites & cases properly.
+    metals_config.settings = {
+      testUserInterface = "Test Explorer",
     }
 
     metals_config.on_attach = function(client, bufnr)

@@ -47,13 +47,7 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
-    config = function()
-      require('lualine').setup {
-        options = {
-          theme = 'kanagawa'
-        }
-      }
-    end,
+    config = function() require('setting.lualine').setup {} end,
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -103,9 +97,11 @@ return {
   },
   {
     'scalameta/nvim-metals',
+    ft = { 'scala', 'sbt' },
     dependencies = {
       'nvim-lua/plenary.nvim',
       'mfussenegger/nvim-dap',
+      'hrsh7th/nvim-cmp',
     },
     config = function() require('setting.metals').setup {} end,
   }
