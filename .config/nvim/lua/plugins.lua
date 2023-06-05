@@ -1,11 +1,15 @@
-require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-
-  use 'mhinz/vim-startify'
-
-  use {
+return {
+  {
+    'rebelot/kanagawa.nvim',
+    priority = 1000,
+    config = function()
+      vim.cmd('colorscheme kanagawa')
+    end,
+  },
+  { 'mhinz/vim-startify' },
+  {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = function()
       require('nvim-tree').setup {
         view = {
@@ -16,42 +20,28 @@ require('packer').startup(function(use)
         },
       }
     end,
-  }
-
-  use {
+  },
+  {
     'Pocco81/auto-save.nvim',
     config = function()
        require('auto-save').setup {}
     end
-  }
-
-  use {
+  },
+  {
     'windwp/nvim-autopairs',
      config = function()
        require('nvim-autopairs').setup {}
      end
-  }
-
-  use {
+  },
+  {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
       require("indent_blankline").setup {}
     end
-  }
-
-  use {
-    'rebelot/kanagawa.nvim',
-    config = function()
-      vim.cmd('colorscheme kanagawa')
-    end,
-  }
-
-  use {
+  },
+  {
     'nvim-lualine/lualine.nvim',
-    requires = {
-      'kyazdani42/nvim-web-devicons',
-      opt = true,
-    },
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = function()
       require('lualine').setup {
         options = {
@@ -59,24 +49,21 @@ require('packer').startup(function(use)
         }
       }
     end,
-  }
-
-  use {
+  },
+  {
     'nvim-telescope/telescope.nvim',
-    requires = {
+    dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-fzy-native.nvim',
     },
     config = function()
       require('telescope').load_extension('fzy_native')
     end,
-  }
-
-  use 'jremmen/vim-ripgrep'
-
-  use {
+  },
+  { 'jremmen/vim-ripgrep' },
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = function()
+    build = function()
       local ts_update = require('nvim-treesitter.install').update { with_sync = true }
       ts_update()
     end,
@@ -92,16 +79,14 @@ require('packer').startup(function(use)
         additional_vim_regex_highlighting = false,
       }
     end,
-  }
-
-  use {
+  },
+  {
     'iamcco/markdown-preview.nvim',
-    run = function() vim.fn['mkdp#util#install']() end,
-  }
-
-  use {
+    build = function() vim.fn['mkdp#util#install']() end,
+  },
+  {
     'hrsh7th/nvim-cmp',
-    requires = {
+    dependencies = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
@@ -143,11 +128,10 @@ require('packer').startup(function(use)
         },
       }
     end,
-  }
-
-  use {
+  },
+  {
     'scalameta/nvim-metals',
-    requires = {
+    dependencies = {
       'nvim-lua/plenary.nvim',
       'mfussenegger/nvim-dap',
     },
@@ -199,4 +183,4 @@ require('packer').startup(function(use)
       )
     end
   }
-end)
+}
