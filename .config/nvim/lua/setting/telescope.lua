@@ -45,6 +45,11 @@ return {
           -- '--smart-case',
         },
       },
+      pickers = {
+        live_grep = {
+          layout_strategy = 'vertical',
+        },
+      },
     }
   end,
 }
