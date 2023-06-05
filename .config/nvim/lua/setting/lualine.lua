@@ -1,9 +1,9 @@
-local function metals_status()
-  return vim.g["metals_status"] or ""
-end
-
 return {
   setup = function()
+    local function metals_status()
+      return vim.g["metals_status"] or ""
+    end
+
     require('lualine').setup {
       options = {
         theme = 'kanagawa'

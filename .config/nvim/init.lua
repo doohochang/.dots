@@ -20,10 +20,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = require('plugins')
-require('lazy').setup(plugins)
+require('lazy').setup(require('plugins'))
 
--- Vim options
+-- Options
 vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 
 local opt = vim.opt
@@ -37,8 +36,3 @@ opt.splitright = true
 opt.splitbelow = true
 
 require('keys')
-
--- Folding
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.cmd('set nofoldenable')

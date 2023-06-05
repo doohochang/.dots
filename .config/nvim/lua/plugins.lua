@@ -14,16 +14,7 @@ return {
   {
     'kyazdani42/nvim-tree.lua',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
-    config = function()
-      require('nvim-tree').setup {
-        view = {
-          width = 40,
-	      },
-	      renderer = {
-          group_empty = true,
-        },
-      }
-    end,
+    config = require('setting.tree').setup,
   },
   {
     'Pocco81/auto-save.nvim',
@@ -47,7 +38,7 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
-    config = function() require('setting.lualine').setup {} end,
+    config = require('setting.lualine').setup,
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -55,7 +46,7 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-fzy-native.nvim',
     },
-    config = function() require('setting.telescope').setup {} end,
+    config = require('setting.telescope').setup,
   },
   {
     'jremmen/vim-ripgrep',
@@ -64,18 +55,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    config = function()
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = 'all',
-        highlight = {
-          enable = true,
-        },
-        indent = {
-          enable = true,
-        },
-        additional_vim_regex_highlighting = false,
-      }
-    end,
+    config = require('setting.treesitter').setup,
   },
   {
     'iamcco/markdown-preview.nvim',
@@ -93,7 +73,7 @@ return {
       'hrsh7th/vim-vsnip',
       'hrsh7th/cmp-nvim-lsp-signature-help',
     },
-    config = function() require('setting.cmp').setup {} end,
+    config = require('setting.cmp').setup,
   },
   {
     'scalameta/nvim-metals',
@@ -103,6 +83,6 @@ return {
       'mfussenegger/nvim-dap',
       'hrsh7th/nvim-cmp',
     },
-    config = function() require('setting.metals').setup {} end,
+    config = require('setting.metals').setup,
   }
 }
