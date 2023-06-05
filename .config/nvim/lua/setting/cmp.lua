@@ -19,6 +19,7 @@ return {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
+      preselect = cmp.PreselectMode.None,
       mapping = cmp.mapping.preset.insert {
         ['<CR>'] = cmp.mapping.confirm { select = false },
         ['<Tab>'] = function(fallback)
