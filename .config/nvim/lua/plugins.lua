@@ -156,6 +156,7 @@ require('packer').startup(function(use)
 
       metals_config.settings = {
         showImplicitArguments = true,
+        serverVersion = "latest.snapshot",
       }
 
       metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
