@@ -16,6 +16,8 @@ opt.number = true
 opt.shiftwidth = indent
 opt.expandtab = true
 opt.tabstop = indent
+opt.splitright = true
+opt.splitbelow = true
 
 require('plugins')
 require('keys')
