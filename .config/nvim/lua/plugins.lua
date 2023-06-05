@@ -61,9 +61,7 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-fzy-native.nvim',
     },
-    config = function()
-      require('telescope').load_extension('fzy_native')
-    end,
+    config = function() require('custom.telescope').setup {} end,
   },
   {
     'jremmen/vim-ripgrep',
