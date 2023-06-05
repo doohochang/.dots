@@ -36,3 +36,4 @@ opt.splitright = true
 opt.splitbelow = true
 
 require('keys')
+require('commands')

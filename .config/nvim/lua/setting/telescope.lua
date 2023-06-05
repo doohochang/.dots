@@ -1,6 +1,9 @@
 return { 
   setup = function()
     local telescope = require('telescope')
+
+    telescope.load_extension('fzy_native')
+
     local actions = require("telescope.actions")
     local action_state = require("telescope.actions.state")
 
@@ -17,8 +20,6 @@ return {
       end
     end
 
-    telescope.load_extension('fzy_native')
-
     telescope.setup {
       defaults = {
         mappings = { -- Key mappings
@@ -33,6 +34,15 @@ return {
             ["<s-tab>"] = actions.toggle_selection + actions.move_selection_previous,
             ["<cr>"] = multi_select,
           },
+        },
+        vimgrep_arguments = {
+          'rg',
+          -- '--color=never',
+          '--no-heading',
+          '--with-filename',
+          '--line-number',
+          '--column',
+          -- '--smart-case',
         },
       },
     }
