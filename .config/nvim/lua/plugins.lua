@@ -34,6 +34,12 @@ return {
     end
   },
   {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup {}
+    end,
+  },
+  {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = require('setting.lualine').setup,
