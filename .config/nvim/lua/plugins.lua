@@ -48,6 +48,10 @@ return {
     end,
   },
   {
+    'RRethy/vim-illuminate',
+    event = 'BufRead',
+  },
+  {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = require('setting.lualine').setup,
