@@ -2,9 +2,11 @@ return {
   setup = function()
     require('nvim-treesitter.configs').setup {
       ensure_installed = 'all',
+      playground = {
+        enable = true,
+      },
       highlight = {
         enable = true,
-        -- disable = { 'scala' },
       },
       indent = {
         enable = true,
