@@ -6,6 +6,9 @@ return {
 
     metals_config.settings = {
       showImplicitArguments = true,
+      showImplicitConversionsAndClasses = true,
+      showInferredType = true,
+      -- enableSemanticHighlighting = true,
       serverVersion = 'latest.snapshot',
     }
 

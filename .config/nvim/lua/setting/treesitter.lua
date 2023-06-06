@@ -4,6 +4,7 @@ return {
       ensure_installed = 'all',
       highlight = {
         enable = true,
+        -- disable = { 'scala' },
       },
       indent = {
         enable = true,

@@ -6,7 +6,7 @@ return {
 
     require('lualine').setup {
       options = {
-        theme = 'kanagawa'
+        theme = 'sonokai'
       },
       sections = {
         lualine_x = { 

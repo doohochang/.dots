@@ -1,10 +1,15 @@
 return {
+  -- {
+  --   'rebelot/kanagawa.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd('colorscheme kanagawa')
+  --   end,
+  -- },
   {
-    'rebelot/kanagawa.nvim',
+    'sainnhe/sonokai',
     priority = 1000,
-    config = function()
-      vim.cmd('colorscheme kanagawa')
-    end,
+    config = require('setting.sonokai').setup,
   },
   { 'mhinz/vim-startify' },
   {
