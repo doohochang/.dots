@@ -40,3 +40,7 @@ map("n", "<leader>dt", function() require("dap").toggle_breakpoint() end)
 map("n", "<leader>dso", function() require("dap").step_over() end)
 map("n", "<leader>dsi", function() require("dap").step_into() end)
 map("n", "<leader>dl", function() require("dap").run_last() end)
+
+
+-- Toggles search highlights
+map("n", "<c-c>", function() vim.cmd('set invhlsearch') end)
