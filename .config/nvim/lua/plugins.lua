@@ -82,7 +82,24 @@ return {
     build = function() vim.fn['mkdp#util#install']() end,
   },
   {
+    'j-hui/fidget.nvim',
+    lazy = true,
+    config = function()
+      require('fidget').setup {
+        window = {
+          blend = 0, -- Sets transparent background.
+        }
+      }
+      -- Sets highlight group to VirtualTextInfo in Sonokai.
+      vim.cmd('highlight link FidgetTitle VirtualTextInfo')
+      vim.cmd('highlight link FidgetTask VirtualTextInfo')
+    end,
+  },
+  {
     'neovim/nvim-lspconfig',
+    dependencies = {
+      'j-hui/fidget.nvim',
+    },
     lazy = true,
   },
   {
