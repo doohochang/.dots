@@ -82,6 +82,10 @@ return {
     build = function() vim.fn['mkdp#util#install']() end,
   },
   {
+    'neovim/nvim-lspconfig',
+    lazy = true,
+  },
+  {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
@@ -103,5 +107,12 @@ return {
       'hrsh7th/nvim-cmp',
     },
     config = require('setting.metals').setup,
-  }
+  },
+  {
+    'simrat39/rust-tools.nvim',
+    ft = { 'rust' },
+    config = function()
+      require('rust-tools').setup {}
+    end,
+  },
 }
