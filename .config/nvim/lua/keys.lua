@@ -46,4 +46,4 @@ map('n', '<leader>dl', function() require('dap').run_last() end)
 map('n', '<c-c>', function() vim.cmd('set invhlsearch') end)
 
 -- Terminal mode
-vim.cmd('tnoremap <esc> <c-\\><c-n>')
+-- vim.cmd('tnoremap <esc> <c-\\><c-n>')

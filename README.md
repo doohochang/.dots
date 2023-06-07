@@ -2,19 +2,31 @@
 
 Configuration files for UNIX-like systems.
 
-```
-# Update submodules first
+```sh
+### Update submodules first
+
 git submodule update --init
 
-# Fonts (on Mac)
+### Fonts
+
+# Install on Mac
 brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
 
-# Alacritty
-brew install alacritty # on Mac
+### Alacritty
+
+# Install on Mac
+brew install alacritty
+
 ln -s ~/.dots/.config/alacritty ~/.config/alacritty
 
-# Neovim
-brew install nvim # on Mac
+### Neovim
+
+# Install on Mac
+brew install nvim
+
 ln -s ~/.dots/.config/nvim ~/.config
+
+# Set git editor to nvim
+git config --global core.editor nvim
 ```
