@@ -20,6 +20,12 @@ brew install alacritty
 
 ln -s ~/.dots/.config/alacritty ~/.config/alacritty
 
+### Tmux
+
+# Install on Mac
+brew install tmux
+ln -s ~/.dots/tmux/.tmux.conf ~/.tmux.conf
+
 ### Neovim
 
 # Install on Mac
