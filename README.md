@@ -18,12 +18,13 @@ brew install font-hack-nerd-font
 # Install on Mac
 brew install alacritty
 
-ln -s ~/.dots/.config/alacritty ~/.config/alacritty
+ln -s ~/.dots/alacritty ~/.config/alacritty
 
 ### Tmux
 
 # Install on Mac
 brew install tmux
+
 ln -s ~/.dots/tmux/.tmux.conf ~/.tmux.conf
 
 ### Neovim
@@ -31,7 +32,7 @@ ln -s ~/.dots/tmux/.tmux.conf ~/.tmux.conf
 # Install on Mac
 brew install nvim
 
-ln -s ~/.dots/.config/nvim ~/.config
+ln -s ~/.dots/nvim ~/.config/nvim
 
 # Set git editor to nvim
 git config --global core.editor nvim
