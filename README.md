@@ -1,56 +1,68 @@
 # .dots
 
-Configuration files for UNIX-like systems.
+My tool configurations for UNIX-like systems.
 
-```sh
-### Update submodules first
+Note that the installing commands are based on Homebrew, as my main machine is a Mac.
 
-git submodule update --init
+### Getting started
+
+1. Clone this repository into `~/.dots`, and then update the submodules.
+
+    ```sh
+    git clone https://github.com/doohochang/.dots.git ~/.dots
+    cd ~/.dots
+    git submodule update --init
+    ```
+
+1. Configure the tools you want.
 
 ### Fonts
 
-# Install on Mac
+```sh
 brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
+```
 
 ### Alacritty
 
-# Install on Mac
+```sh
 brew install alacritty
-
 ln -s ~/.dots/alacritty ~/.config/alacritty
+```
 
 ### Zsh
 
-# Install on Mac
+```sh
 brew install zsh
-
-# Create ~/.zshrc if it does not exists.
 test -f ~/.zshrc || touch ~/.zshrc
-
-# Source config file at the first line in ~/.zshrc.
-# If there are any settings that need to be done earlier than this, just add 'source ~/.dots/zsh/config' into ~/.zshrc manually.
 printf "# Configuration from ~/.dots\nsource ~/.dots/zsh/config\n\n%s" "$(cat ~/.zshrc)" > ~/.zshrc
-
 exec zsh
+```
 
-# Install fzf (optional)
-brew install fzf
+<details>
+    <summary>Note</summary>
+    The script above adds `source ~/.dots/zsh/config` at the beginning of `~/.zshrc`.
+    If there are any settings that need to be done earlier than this, just add `source ~/.dots/zsh/config` into `~/.zshrc` manually.
+</details>
+
 
 ### Tmux
 
-# Install on Mac
+```sh
 brew install tmux
-
 ln -s ~/.dots/tmux/.tmux.conf ~/.tmux.conf
+```
 
 ### Neovim
 
-# Install on Mac
+```sh
 brew install nvim
-
 ln -s ~/.dots/nvim ~/.config/nvim
-
-# Set git editor to nvim
 git config --global core.editor nvim
 ```
+
+<details>
+    <summary>Note</summary>
+    The script above sets Neovim as a Git core editor, which is used for commit message editing, interactive rebasing, and more.
+    If you do not want this, just skip `git config --global core.editor nvim`.
+</details>
