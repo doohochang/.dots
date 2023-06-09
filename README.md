@@ -20,6 +20,23 @@ brew install alacritty
 
 ln -s ~/.dots/alacritty ~/.config/alacritty
 
+### Zsh
+
+# Install on Mac
+brew install zsh
+
+# Create ~/.zshrc if it does not exists.
+test -f ~/.zshrc || touch ~/.zshrc
+
+# Source config file at the first line in ~/.zshrc.
+# If there are any settings that need to be done earlier than this, just add 'source ~/.dots/zsh/config' into ~/.zshrc manually.
+printf "# Configuration from ~/.dots\nsource ~/.dots/zsh/config\n\n%s" "$(cat ~/.zshrc)" > ~/.zshrc
+
+exec zsh
+
+# Install fzf (optional)
+brew install fzf
+
 ### Tmux
 
 # Install on Mac
