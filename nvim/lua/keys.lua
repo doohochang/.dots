@@ -44,6 +44,3 @@ map('n', '<leader>dl', function() require('dap').run_last() end)
 
 -- Clear the existing search highlights
 map('n', '<c-c>', function() vim.cmd('noh') end)
-
--- Terminal mode
--- vim.cmd('tnoremap <esc> <c-\\><c-n>')
