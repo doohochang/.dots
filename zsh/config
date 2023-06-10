@@ -14,9 +14,6 @@ autoload -Uz _zinit
 # p10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Auto suggestions
 zinit light zsh-users/zsh-autosuggestions
 
@@ -26,7 +23,12 @@ zinit light zsh-users/zsh-completions
 ## Syntax highlighting
 zinit light z-shell/F-Sy-H
 
-# Additional zsh configurations
+## Additional zsh configurations
+
+# History size
 HISTFILE=~/.zsh_history
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
+
+# Enable vi mode
+bindkey -v
