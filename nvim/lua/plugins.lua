@@ -56,6 +56,7 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = require('setting.lualine').setup,
   },
+  { 'f-person/git-blame.nvim' },
   {
     'nvim-telescope/telescope.nvim',
     dependencies = {
