@@ -10,15 +10,7 @@ return {
       showInferredType = true,
       enableSemanticHighlighting = true,
       serverVersion = 'latest.snapshot',
-      bloopVersion = '1.5.8',
-      ammoniteJvmProperties = {
-        "-Xmx4G",
-        "-Xms500M",
-      },
-      serverProperties = {
-        "-Xmx4G",
-        "-Xms500M",
-      },
+      bloopVersion = '1.5.11',
       -- For selecting test suites & cases properly.
       testUserInterface = "Test Explorer",
     }

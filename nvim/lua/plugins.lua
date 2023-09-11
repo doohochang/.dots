@@ -56,7 +56,10 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = require('setting.lualine').setup,
   },
-  { 'f-person/git-blame.nvim' },
+  {
+    'lewis6991/gitsigns.nvim',
+    config = require('setting.gitsigns').setup,
+  },
   {
     'nvim-telescope/telescope.nvim',
     dependencies = {
