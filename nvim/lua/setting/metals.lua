@@ -10,7 +10,6 @@ return {
       showInferredType = true,
       enableSemanticHighlighting = true,
       serverVersion = 'latest.snapshot',
-      bloopVersion = '1.5.11',
       -- For selecting test suites & cases properly.
       testUserInterface = "Test Explorer",
     }

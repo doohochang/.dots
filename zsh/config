@@ -32,3 +32,7 @@ SAVEHIST=$HISTSIZE
 
 # Enable vi mode
 bindkey -v
+
+# Obsidian
+OBSIDIAN="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents"
+alias obsidian='nvim $OBSIDIAN'

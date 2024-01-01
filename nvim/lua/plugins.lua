@@ -21,13 +21,13 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = require('setting.tree').setup,
   },
-  {
-    'Pocco81/auto-save.nvim',
-    event = 'InsertEnter',
-    config = function()
-       require('auto-save').setup {}
-    end
-  },
+  -- {
+  --   'Pocco81/auto-save.nvim',
+  --   event = 'InsertEnter',
+  --   config = function()
+  --      require('auto-save').setup {}
+  --   end
+  -- },
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
@@ -37,7 +37,7 @@ return {
     'lukas-reineke/indent-blankline.nvim',
     event = 'BufRead',
     config = function()
-      require("indent_blankline").setup {}
+      require("ibl").setup {}
     end
   },
   {
