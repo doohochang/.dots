@@ -37,6 +37,8 @@ opt.splitbelow = true
 opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 
+vim.cmd('filetype indent off')
+
 -- Auto-reloading when the file is modified externally.
 vim.o.autoread = true
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
