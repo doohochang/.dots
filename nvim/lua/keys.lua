@@ -11,7 +11,9 @@ map('n', '<leader>fh', function() require('telescope.builtin').help_tags() end)
 
 -- LSP
 map('n', 'gD',  vim.lsp.buf.definition)
+map("n", "gtD", vim.lsp.buf.type_definition)
 map('n', 'K',  vim.lsp.buf.hover)
+map("v", "K", function() require("metals").type_of_range() end)
 map('n', 'gi', vim.lsp.buf.implementation)
 map('n', 'gr', vim.lsp.buf.references)
 map('n', 'gds', function() require('telescope.builtin').lsp_document_symbols() end)
@@ -31,6 +33,7 @@ map('n', ']c', function() vim.diagnostic.goto_next { wrap = false } end)
 -- Build server
 map('n', '<leader>mc', function() require('telescope').extensions.metals.commands() end)
 map('n', '<leader>ws', function() require('metals').hover_worksheet() end)
+map('n', '<leader>tt', function() require('metals.tvp').toggle_tree_view() end)
 
 -- DAP
 map('n', '<leader>dc', function() require('dap').continue() end)

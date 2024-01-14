@@ -4,6 +4,8 @@ return {
 
     metals_config.init_options.statusBarProvider = "on"
 
+    metals_config.find_root_dir_max_project_nesting = 2
+
     metals_config.settings = {
       showImplicitArguments = true,
       showImplicitConversionsAndClasses = true,
@@ -15,6 +17,12 @@ return {
     }
 
     metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+    metals_config.tvp = {
+      icons = {
+        enabled = true,
+      },
+    }
 
     local dap = require('dap')
 
