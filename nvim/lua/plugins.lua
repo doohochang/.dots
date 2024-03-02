@@ -91,9 +91,11 @@ return {
     lazy = true,
     config = function()
       require('fidget').setup {
-        window = {
-          blend = 0, -- Sets transparent background.
-        }
+        notification = {
+          window = {
+            winblend = 0, -- Sets transparent background.
+          },
+        },
       }
       -- Sets highlight group to VirtualTextInfo in Sonokai.
       vim.cmd('highlight link FidgetTitle VirtualTextInfo')
@@ -104,8 +106,10 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       'j-hui/fidget.nvim',
+      'hrsh7th/nvim-cmp',
     },
     lazy = true,
+    config = require('setting.lspconfig').setup,
   },
   {
     'hrsh7th/nvim-cmp',
@@ -131,10 +135,13 @@ return {
     config = require('setting.metals').setup,
   },
   {
-    'simrat39/rust-tools.nvim',
+    'mrcjkb/rustaceanvim',
+    version = '^4', -- Recommended
     ft = { 'rust' },
-    config = function()
-      require('rust-tools').setup {}
-    end,
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
   },
 }
