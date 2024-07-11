@@ -28,7 +28,7 @@ return {
           },
           'diagnostics',
         },
-        lualine_x = { 
+        lualine_x = {
           metals_status,
           'encoding',
           'fileformat',

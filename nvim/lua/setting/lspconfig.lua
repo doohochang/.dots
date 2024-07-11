@@ -25,6 +25,11 @@ return {
       capabilities = capabilities,
     }
 
+    -- MDX
+    lspconfig.mdx_analyzer.setup {
+      capabilities = capabilities,
+    }
+
     -- Lua
     lspconfig.lua_ls.setup {
       capabilities = capabilities,
