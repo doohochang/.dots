@@ -127,6 +127,7 @@ return {
   {
     'scalameta/nvim-metals',
     ft = { 'scala', 'sbt' },
+    -- keys = { "<leader>ml", "<cmd>LoadMetals<cr>", desc = "Load Metals" },
     dependencies = {
       'nvim-lua/plenary.nvim',
       'mfussenegger/nvim-dap',
