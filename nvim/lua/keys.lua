@@ -20,6 +20,7 @@ map('n', 'gds', function() require('telescope.builtin').lsp_document_symbols() e
 map('n', 'gws', function() require('telescope.builtin').lsp_dynamic_workspace_symbols() end)
 map('n', '<leader>cl', vim.lsp.codelens.run)
 map('n', '<leader>sh', vim.lsp.buf.signature_help)
+map({ 'n', 'i' }, '<c-s>', vim.lsp.buf.signature_help)
 map('n', '<leader>rn', vim.lsp.buf.rename)
 map(
   'n',
@@ -63,6 +64,8 @@ map('n', '<leader>dso', function() require('dap').step_over() end)
 map('n', '<leader>dsi', function() require('dap').step_into() end)
 map('n', '<leader>dl', function() require('dap').run_last() end)
 
-
 -- Clear the existing search highlights
 map('n', '<c-c>', function() vim.cmd('noh') end)
+
+-- Markdown Preview
+map('n', '<leader>mp', function() vim.cmd('MarkdownPreview') end)
