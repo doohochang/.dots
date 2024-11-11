@@ -28,6 +28,7 @@ vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 local opt = vim.opt
 
 local indent = 2
+opt.number = true
 opt.relativenumber = true
 opt.shiftwidth = indent
 opt.expandtab = true

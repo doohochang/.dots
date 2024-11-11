@@ -39,6 +39,11 @@ return {
     event = 'BufRead',
     config = function()
       require("ibl").setup {}
+
+      -- This plugin seems to hide line numbers during setup for now.
+      -- Added the below code to show line numbers properly.
+      vim.opt.number = true
+      vim.opt.relativenumber = true
     end
   },
   {
