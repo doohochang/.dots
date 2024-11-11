@@ -10,9 +10,9 @@ map('n', '<leader>fb', function() require('telescope.builtin').buffers() end)
 map('n', '<leader>fh', function() require('telescope.builtin').help_tags() end)
 
 -- LSP
-map('n', 'gD',  vim.lsp.buf.definition)
+map('n', 'gD', vim.lsp.buf.definition)
 map("n", "gtD", vim.lsp.buf.type_definition)
-map('n', 'K',  vim.lsp.buf.hover)
+map('n', 'K', vim.lsp.buf.hover)
 map("v", "K", function() require("metals").type_of_range() end)
 map('n', 'gi', vim.lsp.buf.implementation)
 map('n', 'gr', vim.lsp.buf.references)
@@ -21,12 +21,31 @@ map('n', 'gws', function() require('telescope.builtin').lsp_dynamic_workspace_sy
 map('n', '<leader>cl', vim.lsp.codelens.run)
 map('n', '<leader>sh', vim.lsp.buf.signature_help)
 map('n', '<leader>rn', vim.lsp.buf.rename)
-map('n', '<leader>f', vim.lsp.buf.format)
+map(
+  'n',
+  '<leader>f',
+  function()
+    local ft = vim.bo.filetype
+    if ft == "javascript"
+        or ft == "javascriptreact"
+        or ft == "javascript.jsx"
+        or ft == "typescript"
+        or ft == "typescriptreact"
+        or ft == "typescript.tsx"
+        or ft == "vue"
+        or ft == "svelte"
+        or ft == "astro" then
+      vim.cmd("EslintFixAll")
+    else
+      vim.lsp.buf.format()
+    end
+  end
+)
 map('n', '<leader>ca', vim.lsp.buf.code_action)
-map('n', '<leader>aa', vim.diagnostic.setqflist) -- all workspace diagnostics
+map('n', '<leader>aa', vim.diagnostic.setqflist)                                   -- all workspace diagnostics
 map('n', '<leader>ae', function() vim.diagnostic.setqflist { severity = 'E' } end) -- all workspace errors
 map('n', '<leader>aw', function() vim.diagnostic.setqflist { severity = 'W' } end) -- all workspace warnings
-map('n', '<leader>d', vim.diagnostic.setloclist) -- buffer diagnostics only
+map('n', '<leader>d', vim.diagnostic.setloclist)                                   -- buffer diagnostics only
 map('n', '[c', function() vim.diagnostic.goto_prev { wrap = false } end)
 map('n', ']c', function() vim.diagnostic.goto_next { wrap = false } end)
 
