@@ -1,0 +1,259 @@
+
+[cursor]
+vi_mode_style = "None"
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[debug]
+log_level = "Warn"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+
+[font.bold_italic]
+family = "Hack Nerd Font Mono"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mode = "~Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "SearchConfirm"
+key = "Return"
+mode = "Search|Vi"
+
+[[keyboard.bindings]]
+action = "SearchCancel"
+key = "Escape"
+mode = "Search"
+
+[[keyboard.bindings]]
+action = "SearchCancel"
+key = "C"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "SearchClear"
+key = "U"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "SearchDeleteWord"
+key = "W"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "SearchHistoryPrevious"
+key = "P"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "SearchHistoryNext"
+key = "N"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "SearchHistoryPrevious"
+key = "Up"
+mode = "Search"
+
+[[keyboard.bindings]]
+action = "SearchHistoryNext"
+key = "Down"
+mode = "Search"
+
+[[keyboard.bindings]]
+action = "SearchFocusNext"
+key = "Return"
+mode = "Search|~Vi"
+
+[[keyboard.bindings]]
+action = "SearchFocusPrevious"
+key = "Return"
+mode = "Search|~Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "K"
+mode = "~Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "NumpadAdd"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "NumpadSubtract"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ClearSelection"
+key = "C"
+mode = "Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Hide"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "HideOtherApplications"
+key = "H"
+mods = "Command|Alt"
+
+[[keyboard.bindings]]
+action = "Minimize"
+key = "M"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "Return"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ToggleMaximized"
+key = "F"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+action = "SearchForward"
+key = "F"
+mode = "~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "SearchBackward"
+key = "B"
+mode = "~Search"
+mods = "Command"
+
+[mouse]
+hide_when_typing = false
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "full"
+decorations_theme_variant = "None"
+dynamic_padding = true
+dynamic_title = true
+option_as_alt = "OnlyLeft"
+resize_increments = true
+startup_mode = "Windowed"
+title = ""
+
+[window.dimensions]
+columns = 200
+lines = 60
+
+[general]
+live_config_reload = true
+working_directory = "None"
+import = ["/Users/devin/.config/alacritty/alacritty-theme/themes/afterglow.toml"]
