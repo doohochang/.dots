@@ -3,8 +3,19 @@ return {
     local lspconfig = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+    -- Json
+    lspconfig.jsonls.setup {
+      capabilities = capabilities,
+    }
+
+    -- Yaml
+    lspconfig.yamlls.setup {
+      capabilities = capabilities,
+    }
+
     -- Go
     lspconfig.gopls.setup {
+      capabilities = capabilities,
       settings = {
         gopls = {
           analyses = {
@@ -19,7 +30,7 @@ return {
           pattern = "*.go",
           callback = function()
             local params = vim.lsp.util.make_range_params()
-            params.context = {only = {"source.organizeImports"}}
+            params.context = { only = { "source.organizeImports" } }
             -- buf_request_sync defaults to a 1000ms timeout. Depending on your
             -- machine and codebase, you may want longer. Add an additional
             -- argument after params if you find that you have to write the file
@@ -34,7 +45,7 @@ return {
                 end
               end
             end
-            vim.lsp.buf.format({async = false})
+            vim.lsp.buf.format({ async = false })
           end,
         })
       end,
@@ -54,16 +65,32 @@ return {
       capabilities = capabilities,
     }
 
-    lspconfig.jsonls.setup {
-      capabilities = capabilities,
-    }
-
     lspconfig.eslint.setup {
       capabilities = capabilities,
+      settings = {
+        experimental = {
+          useFlatConfig = true,
+        },
+      },
     }
 
     -- MDX
     lspconfig.mdx_analyzer.setup {
+      capabilities = capabilities,
+    }
+
+    -- Biome
+    lspconfig.biome.setup {
+      capabilities = capabilities,
+    }
+
+    -- Remark
+    lspconfig.remark_ls.setup {
+      capabilities = capabilities,
+    }
+
+    -- Unocss
+    lspconfig.unocss.setup {
       capabilities = capabilities,
     }
 

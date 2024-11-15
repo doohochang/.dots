@@ -146,13 +146,17 @@ return {
     ft = { 'rust' },
   },
   {
-    "pmizio/typescript-tools.nvim",
+    'pmizio/typescript-tools.nvim',
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {
       settings = {
         tsserver_file_preferences = {
           quotePreference = 'single',
           importModuleSpecifierPreference = 'non-relative',
+        },
+        jsx_close_tag = {
+          enable = true,
+          filetypes = { "javascriptreact", "typescriptreact" },
         },
       },
     },
