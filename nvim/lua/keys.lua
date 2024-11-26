@@ -44,8 +44,8 @@ map(
 )
 map('n', '<leader>ca', vim.lsp.buf.code_action)
 map('n', '<leader>aa', vim.diagnostic.setqflist)                                   -- all workspace diagnostics
-map('n', '<leader>ae', function() vim.diagnostic.setqflist { severity = 'E' } end) -- all workspace errors
-map('n', '<leader>aw', function() vim.diagnostic.setqflist { severity = 'W' } end) -- all workspace warnings
+map('n', '<leader>ae', function() vim.diagnostic.setqflist { severity = vim.diagnostic.severity.E } end) -- all workspace errors
+map('n', '<leader>aw', function() vim.diagnostic.setqflist { severity = vim.diagnostic.severity.W } end) -- all workspace warnings
 map('n', '<leader>d', vim.diagnostic.setloclist)                                   -- buffer diagnostics only
 map('n', '[c', function() vim.diagnostic.goto_prev { wrap = false } end)
 map('n', ']c', function() vim.diagnostic.goto_next { wrap = false } end)

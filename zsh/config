@@ -30,6 +30,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
+unsetopt EXTENDED_HISTORY
+
 # Enable vi mode
 bindkey -v
 
