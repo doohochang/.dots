@@ -67,11 +67,6 @@ return {
 
     lspconfig.eslint.setup {
       capabilities = capabilities,
-      settings = {
-        experimental = {
-          useFlatConfig = true,
-        },
-      },
     }
 
     -- MDX
