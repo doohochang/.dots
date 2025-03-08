@@ -80,9 +80,9 @@ return {
     }
 
     -- Remark
-    lspconfig.remark_ls.setup {
-      capabilities = capabilities,
-    }
+    -- lspconfig.remark_ls.setup {
+    --   capabilities = capabilities,
+    -- }
 
     -- Unocss
     lspconfig.unocss.setup {

@@ -69,3 +69,17 @@ map('n', '<c-c>', function() vim.cmd('noh') end)
 
 -- Markdown Preview
 map('n', '<leader>mp', function() vim.cmd('MarkdownPreview') end)
+
+-- Insert today's date (YYYY-MM-DD format)
+map('n', '<leader>td', function()
+  local date = os.date('%Y-%m-%d')
+  -- In normal mode, insert at cursor position
+  vim.api.nvim_put({ date }, 'c', true, true)
+end)
+
+-- Insert today's date in insert mode with Ctrl-c d
+map('i', '<C-c>d', function()
+  local date = os.date('%Y-%m-%d')
+  -- In insert mode, insert at cursor without leaving insert mode
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(date, true, false, true), 'n', true)
+end)

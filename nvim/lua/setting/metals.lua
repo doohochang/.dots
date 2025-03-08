@@ -4,7 +4,7 @@ return {
 
     metals_config.init_options.statusBarProvider = "on"
 
-    metals_config.find_root_dir_max_project_nesting = 2
+    metals_config.find_root_dir_max_project_nesting = 5
 
     metals_config.settings = {
       showImplicitArguments = true,
