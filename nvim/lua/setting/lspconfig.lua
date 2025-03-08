@@ -87,6 +87,13 @@ return {
     -- Unocss
     lspconfig.unocss.setup {
       capabilities = capabilities,
+      filetypes = { "erb", "haml", "hbs", "html", "css", "postcss", "javascript", "javascriptreact", "ejs", "php", "svelte", "typescript", "typescriptreact", "vue-html", "vue", "sass", "scss", "less", "stylus", "astro", "rescript" },
+    }
+
+    -- Markdown
+    lspconfig.marksman.setup {
+      capabilities = capabilities,
+      filetypes = { "markdown" },
     }
 
     -- Lua
