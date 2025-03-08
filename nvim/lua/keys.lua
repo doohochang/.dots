@@ -43,10 +43,10 @@ map(
   end
 )
 map('n', '<leader>ca', vim.lsp.buf.code_action)
-map('n', '<leader>aa', vim.diagnostic.setqflist)                                   -- all workspace diagnostics
+map('n', '<leader>aa', vim.diagnostic.setqflist)                                                         -- all workspace diagnostics
 map('n', '<leader>ae', function() vim.diagnostic.setqflist { severity = vim.diagnostic.severity.E } end) -- all workspace errors
 map('n', '<leader>aw', function() vim.diagnostic.setqflist { severity = vim.diagnostic.severity.W } end) -- all workspace warnings
-map('n', '<leader>d', vim.diagnostic.setloclist)                                   -- buffer diagnostics only
+map('n', '<leader>d', vim.diagnostic.setloclist)                                                         -- buffer diagnostics only
 map('n', '[c', function() vim.diagnostic.goto_prev { wrap = false } end)
 map('n', ']c', function() vim.diagnostic.goto_next { wrap = false } end)
 
@@ -77,8 +77,8 @@ map('n', '<leader>td', function()
   vim.api.nvim_put({ date }, 'c', true, true)
 end)
 
--- Insert today's date in insert mode with Ctrl-c d
-map('i', '<C-c>d', function()
+-- Insert today's date in insert mode with Ctrl-c td
+map({ 'c', 'i' }, '<C-c>td', function()
   local date = os.date('%Y-%m-%d')
   -- In insert mode, insert at cursor without leaving insert mode
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(date, true, false, true), 'n', true)
