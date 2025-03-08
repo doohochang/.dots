@@ -8,11 +8,11 @@ Note that the installing commands are based on Homebrew, as my main machine is a
 
 1. Clone this repository into `~/.dots`, and then update the submodules.
 
-    ```sh
-    git clone https://github.com/doohochang/.dots.git ~/.dots
-    cd ~/.dots
-    git submodule update --init
-    ```
+   ```sh
+   git clone https://github.com/doohochang/.dots.git ~/.dots
+   cd ~/.dots
+   git submodule update --init
+   ```
 
 1. Configure the tools you want.
 
@@ -40,11 +40,10 @@ exec zsh
 ```
 
 <details>
-    <summary>Note</summary>
-    The script above adds `source ~/.dots/zsh/config` at the beginning of `~/.zshrc`.
-    If there are any settings that need to be done earlier than this, just add `source ~/.dots/zsh/config` into `~/.zshrc` manually.
+  <summary>Note</summary>
+  The script above adds `source ~/.dots/zsh/config` at the beginning of `~/.zshrc`.
+  If there are any settings that need to be done earlier than this, just add `source ~/.dots/zsh/config` into `~/.zshrc` manually.
 </details>
-
 
 ### Tmux
 
@@ -62,7 +61,7 @@ git config --global core.editor nvim
 ```
 
 <details>
-    <summary>Note</summary>
-    The script above sets Neovim as a Git core editor, which is used for commit message editing, interactive rebasing, and more.
-    If you do not want this, just skip `git config --global core.editor nvim`.
+  <summary>Note</summary>
+  The script above sets Neovim as a Git core editor, which is used for commit message editing, interactive rebasing, and more.
+  If you do not want this, just skip `git config --global core.editor nvim`.
 </details>

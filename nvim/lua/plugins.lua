@@ -161,4 +161,10 @@ return {
       },
     },
   },
+  {
+    'stevearc/conform.nvim',
+    cmd = { 'ConformInfo' },
+    ft = { 'markdown' },
+    config = require('setting.conform').setup,
+  },
 }

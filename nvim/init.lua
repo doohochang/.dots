@@ -2,6 +2,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- Disable markdown recommended style (which sets tab width to 4)
+vim.g.markdown_recommended_style = 0
+
 -- Leader keys
 vim.g.mapleader = ","
 vim.g.localleader = "\\"
