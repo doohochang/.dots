@@ -162,7 +162,7 @@ return {
     },
   },
   {
-    'stevearc/conform.nvim',
+    'stevearc/conform.nvim', -- It works only if Prettier is installed.
     cmd = { 'ConformInfo' },
     ft = { 'markdown' },
     config = require('setting.conform').setup,
