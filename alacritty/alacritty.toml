@@ -256,4 +256,4 @@ lines = 60
 [general]
 live_config_reload = true
 working_directory = "None"
-import = ["/Users/devin/.config/alacritty/alacritty-theme/themes/afterglow.toml"]
+import = ["~/.config/alacritty/alacritty-theme/themes/afterglow.toml"]
