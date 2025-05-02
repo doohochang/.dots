@@ -19,8 +19,8 @@ Note that the installing commands are based on Homebrew, as my main machine is a
 ### Fonts
 
 ```sh
-brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
+brew install font-jetbrains-mono
 ```
 
 ### Alacritty
