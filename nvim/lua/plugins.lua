@@ -159,6 +159,15 @@ return {
           filetypes = { "javascriptreact", "typescriptreact" },
         },
       },
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "javascript.jsx",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx",
+        "gs" -- Google Apps Script files
+      },
     },
   },
   {

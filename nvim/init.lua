@@ -17,7 +17,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -60,8 +60,14 @@ vim.cmd('filetype indent off')
 -- Auto-reloading when the file is modified externally.
 vim.o.autoread = true
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
-	command = "if mode() != 'c' | checktime | endif",
-	pattern = { "*" },
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})
+
+-- Google Apps Script support: treat .gs files as JavaScript
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.gs" },
+  command = "set filetype=javascript",
 })
 
 require('keys')
