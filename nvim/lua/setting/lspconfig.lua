@@ -54,6 +54,13 @@ return {
     -- Python
     lspconfig.pyright.setup {
       capabilities = capabilities,
+      settings = {
+        python = {
+          pythonPath = "./.venv/bin/python",
+          venvPath = ".",
+          venv = ".venv",
+        },
+      },
     }
 
     -- VSCode language servers extracted
